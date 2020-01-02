@@ -12,6 +12,17 @@ programming exercise.  I will be using a lot of examples from OSDev and
 the Minix book
 
 #### Build/Install
+Assemble  Kernel Multiboot entry point:
+i686-elf-as k_entry/k_entry_i686.asm -o k_entry.o
+
+Compile kernel cpp:
+i686-elf-g++ -c kernel.c++ -o KhaOS.o -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
+
+Link with (requires linker.ld linker script):
+i686-elf-gcc -T linker.ld -o KhaOS.bin -ffreestanding -O2 -nostdlib k_entry.o KhaOS.o -lgcc
+
+Test with:
+qemu-system-i386 -kernel KhaOS.bin
 
 #### Some other stuff
 To create a HDD image with GRUB on the MBR pointed to my OS partition
