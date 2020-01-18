@@ -5,13 +5,20 @@
 #include "vga_writer.h"
 
 
+//! \class vga_text_display
+//!  A simple VGA Text mode output driver
+
+//! This class allows writing of strings to the VGA memory mapped buffer
+//! with support for newlines and scrolling.
+//! It's a simple driver meant for early kernel output.
+
 size_t vga_text_display::strlen(const char* str)
   {
     size_t len = 0;
     while(str[len])
       len++;
     return len;
-  }
+  }  //!< A basic string length implementation
 
 vga_text_display::vga_text_display()
   {
@@ -29,7 +36,8 @@ vga_text_display::vga_text_display()
           } 
       }
 
-  }
+  }  //!< The constructor sets up the VGA buffer with whitespace
+     //!  And sets a default font color bit
 
 
 void vga_text_display::setcolor(uint8_t color)

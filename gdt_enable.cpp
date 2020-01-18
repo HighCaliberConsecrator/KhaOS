@@ -8,6 +8,9 @@
 gdt_entry gdt_entries[5];
 gdt_ptr gdt_pointer;
 
+//! This function does the bitwise operations to set
+//! the fields of each gdt_entry appropriately.
+//! Thank you jamesmolloy.co.uk and OSDev.
 static void gdt_set_fields(uint32_t gdt_index, uint32_t base, uint32_t limit, uint8_t access, uint8_t gran)
   {
     gdt_entries[gdt_index].base_low = base & 0xFFFF;
@@ -21,9 +24,15 @@ static void gdt_set_fields(uint32_t gdt_index, uint32_t base, uint32_t limit, ui
     gdt_entries[gdt_index].access = access;
   } 
 
+//! This function disables interrupts, creates the GDT pointer,
+//! and then calls gdt_set_fields() 5 times to set up 
+//! a flat memory model GDT. Then it calls
+//! lgdt in inline assembly and flushes the data and code segment
+//! registers to kickstart the use of the new GDT.
+
 void gdt_enable()
   {       
-    //disable interrupts       
+    //!disable interrupts       
     asm("CLI");
 
     gdt_pointer.limit = (sizeof(gdt_entry) * 5) - 1;
