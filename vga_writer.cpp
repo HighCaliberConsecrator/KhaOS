@@ -58,7 +58,7 @@ void vga_text_display::scroll()
   {
 
 
-    for(size_t r_index = 0; r_index < VGA_HEIGHT; r_index++)
+    for(size_t r_index = 0; r_index < VGA_HEIGHT - 1 ; r_index++)
       {          
         for(size_t c_index=0; c_index < VGA_WIDTH; c_index++)
           {      
@@ -66,7 +66,7 @@ void vga_text_display::scroll()
           }  
       }
 
-    clear_row(VGA_HEIGHT);
+    clear_row(VGA_HEIGHT-1);
   }
 
 void vga_text_display::putentryat(char c, uint8_t color, size_t x, size_t y)
@@ -75,14 +75,10 @@ void vga_text_display::putentryat(char c, uint8_t color, size_t x, size_t y)
       {
         terminal_row++;
         terminal_column = 0;
-      
+  
       	return;
       }	  
 
-    if(terminal_row >= VGA_HEIGHT)
-      {
-        scroll();
-      }
 
        
 	const size_t index = y * VGA_WIDTH + x;
@@ -98,10 +94,17 @@ void vga_text_display::putchar(char c)
       {
          terminal_column = 0;
 	  if (++terminal_row == VGA_HEIGHT)
-            {
-	      terminal_row = 0;
+            {          
+              scroll();
+              terminal_row = VGA_HEIGHT - 1;
             }
        }
+
+    if(terminal_row == VGA_HEIGHT)
+      {
+        scroll();             
+        terminal_row = VGA_HEIGHT - 1; 
+      }           
 
 
   }

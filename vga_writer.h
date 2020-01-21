@@ -32,7 +32,7 @@ class vga_text_display
 
     
     static const size_t VGA_WIDTH = 80;
-    static const size_t VGA_HEIGHT=60;
+    static const size_t VGA_HEIGHT=25;
 
     public:
       vga_text_display();
