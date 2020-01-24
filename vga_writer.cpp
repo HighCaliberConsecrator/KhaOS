@@ -118,6 +118,7 @@ void vga_text_display::write(const char* data, size_t size)
 
   }
 
+
 void vga_text_display::writestring(const char* data)
   {
    

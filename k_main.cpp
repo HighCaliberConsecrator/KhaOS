@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
+#include "klib.h"
 #include "vga_writer.h"
 #include "gdt_enable.h"
 #include "isr_dispatcher.h"
@@ -55,28 +56,23 @@ extern "C"
           terminal.writestring("...GDT Initalized!\n");
           
           terminal.writestring("Initializing IDT...\n");
-          isr_dispatcher interrupt_dispatcher();
-          //asm("INT $0x0");       
+          isr_dispatcher interrupt_dispatcher(terminal);
+          asm("INT $0x23");       
           if(!isr_ran)
             {
-              terminal.writestring("ISR did not run...\n"); 
+          //    terminal.writestring("ISR did not run...\n"); 
             }
           else
             {
               terminal.writestring("ISR Ran!\n");
             }          
 
-          terminal.writestring("...IDT Initialized!\n");
-          terminal.writestring("Testing if\n");
-          terminal.writestring("Scrolling is....\n");
-          terminal.writestring("working or not...\n");
+          //terminal.writestring("...IDT Initialized!\n");
 
-          terminal.clear_row(3);
-          terminal.clear_row(4);
-          terminal.clear_row(5);
-          terminal.clear_row(6);
-          terminal.writestring("TEST???");
-          //asm("HLT");
+        //  int testhex = 33;
+        //  char result[3];
+//          terminal.writestring(klib::itoa(testhex,16,result));
+
 
        }
    }
