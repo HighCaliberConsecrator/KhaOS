@@ -1,4 +1,5 @@
 #!/bin/bash
+## To be replaced with an actual build system soon 
 export PATH="/home/kevin/cross-compile-tools/bin":$PATH
 i686-elf-as k_entry/k_entry_i686.asm -o ../k_entry.o
 i686-elf-g++ -c k_main.cpp -o ../KhaOS.o -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti

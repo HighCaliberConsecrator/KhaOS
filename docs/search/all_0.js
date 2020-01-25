@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['idt_5ftype_5fattr',['idt_type_attr',['../structidt__type__attr.html',1,'']]],
-  ['isr_5fdispatcher',['isr_dispatcher',['../classisr__dispatcher.html',1,'']]]
+  ['isr_5fdispatcher',['isr_dispatcher',['../classisr__dispatcher.html',1,'']]],
+  ['itoa',['itoa',['../namespaceklib.html#a868e9408791ea80c09422f70aca0a31a',1,'klib']]]
 ];

@@ -12,7 +12,10 @@
 #error "You are not using a cross-compiler, you will most certainly run into trouble"
 #endif
  
-/* This tutorial will only work for the 32-bit ix86 targets. */
+/* This will only work for the 32-bit x86 targets. 
+   ...for now, plan to add support for switching to long mode on x64 
+   and loading alternative GDT/IDT objects for running on x64
+ * */
 #if !defined(__i386__)
 #error "This tutorial needs to be compiled with a ix86-elf compiler"
 #endif
@@ -57,21 +60,20 @@ extern "C"
           
           terminal.writestring("Initializing IDT...\n");
           isr_dispatcher interrupt_dispatcher(terminal);
+
+          //Fire an interrupt to validate IDT
           asm("INT $0x23");       
           if(!isr_ran)
             {
-          //    terminal.writestring("ISR did not run...\n"); 
+              terminal.writestring("ISR did not run...\n"); 
             }
           else
             {
               terminal.writestring("ISR Ran!\n");
             }          
 
-          //terminal.writestring("...IDT Initialized!\n");
+          terminal.writestring("...IDT Initialized!\n");
 
-        //  int testhex = 33;
-        //  char result[3];
-//          terminal.writestring(klib::itoa(testhex,16,result));
 
 
        }

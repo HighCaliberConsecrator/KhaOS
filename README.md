@@ -8,21 +8,16 @@
 
 #### What is it
 KhaOS is a hobby  operating system I'm building for fun and as a systems
-programming exercise.  I will be using a lot of examples from OSDev and
-the Minix book
+programming exercise.  I will be using a lot of guidance from Operating Systems Design and Implementation
+(Minix book), OS Dev Wiki, James Molloy's tutorial at www.jamesmolloy.co.uk, and
+countless Stack posts.
 
 #### Build/Install
-Assemble  Kernel Multiboot entry point:
-i686-elf-as k_entry/k_entry_i686.asm -o k_entry.o
-
-Compile kernel cpp:
-i686-elf-g++ -c kernel.c++ -o KhaOS.o -ffreestanding -O2 -Wall -Wextra -fno-exceptions -fno-rtti
-
-Link with (requires linker.ld linker script):
-i686-elf-gcc -T linker.ld -o KhaOS.bin -ffreestanding -O2 -nostdlib k_entry.o KhaOS.o -lgcc
+Build with ./build_kernel.sh
 
 Test with:
 qemu-system-i386 -kernel KhaOS.bin
+
 
 #### Some other stuff
 To create a HDD image with GRUB on the MBR pointed to my OS partition

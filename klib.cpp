@@ -3,6 +3,10 @@
 #include <stdbool.h>
 #include "klib.h"
 
+//! \namespace klib 
+//! This namespace will contain some basic utility functions 
+//! that will be helpful. A basic library for my kernelspace code
+
 //! Convert integers to ASCII.
 //! Can output in hex or binary or whatever.
 //! Very helpful for debugging so I can print sizeof() results

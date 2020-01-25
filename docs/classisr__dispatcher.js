@@ -1,6 +1,6 @@
 var classisr__dispatcher =
 [
-    [ "isr_dispatcher", "classisr__dispatcher.html#a232274596011c53321184115995903dc", null ],
+    [ "isr_dispatcher", "classisr__dispatcher.html#a6b8e41687fe93d82fd6abe8bf5f991c5", null ],
     [ "clear_row", "classisr__dispatcher.html#a2971afda6e1b0a4aaf6ff1b4167dc30e", null ],
     [ "putchar", "classisr__dispatcher.html#a124f7e33083c7dab26076cca9e5092bf", null ],
     [ "putentryat", "classisr__dispatcher.html#afe86cc4f113fea7f93585cff0e3dca7b", null ],
