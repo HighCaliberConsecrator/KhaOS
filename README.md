@@ -3,9 +3,9 @@
 
 1. What is it
 2. Build/install
-3. Some more stuff in another sectin
+3. Some more stuff in another section
 
-
+Browse the docs here  [https://highcaliberconsecrator.github.io/KhaOS/]
 #### What is it
 KhaOS is a hobby  operating system I'm building for fun and as a systems
 programming exercise.  I will be using a lot of guidance from Operating Systems Design and Implementation
