@@ -62,7 +62,7 @@ extern "C"
           isr_dispatcher interrupt_dispatcher(terminal);
 
           //Fire an interrupt to validate IDT
-          asm("INT $0x23");       
+         // asm("INT $0x23");       
           if(!isr_ran)
             {
               terminal.writestring("ISR did not run...\n"); 
@@ -74,7 +74,28 @@ extern "C"
 
           terminal.writestring("...IDT Initialized!\n");
 
+          
+          char results[9];
 
+          int testarray[12] = {7,12,1,92,6,18,4,72,75,11,22,34};
 
+          terminal.writestring("Pre sort:\n");
+          
+          for(int i=0;i<12;i++)
+            {                  
+              terminal.writestring(klib::itoa(testarray[i],10,results));
+              terminal.writestring(" ");
+            }
+                          
+          klib::sort(testarray,0,12);
+
+          terminal.writestring("\nPost Sort:\n");
+
+          for(int z=0;z<12;z++)
+            {                  
+              terminal.writestring(klib::itoa(testarray[z],10,results));
+              terminal.writestring(" ");
+            }
+            
        }
    }

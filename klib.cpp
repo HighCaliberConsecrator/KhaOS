@@ -47,3 +47,32 @@ void* klib::memset(void* ptr, int value, size_t num)
     return ptr;    
   }        
 
+
+
+/*
+void* klib::sort(void* data,size_t start ,size_t end)
+  {
+    if( !(end < start) and !(end > start) )
+      {
+        return data;
+      }
+
+     uint32_t pivot = data[end/2];
+     size_t j = start;
+
+     for(size_t i=0; i < end; i++)
+       {
+         if(data[i] < pivot)
+           {
+             klib::swap(data[i],data[j]);
+             j++;                                    
+           }             
+       } 
+     klib::swap(data[j],data[end]);
+
+     klib::sort(data,start,--j);
+     klib::sort(data,++j,end);;
+
+
+  }        
+  */
