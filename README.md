@@ -10,7 +10,9 @@ Browse the docs here  [https://highcaliberconsecrator.github.io/KhaOS/]
 KhaOS is a hobby  operating system I'm building for fun and as a systems
 programming exercise.  I will be using a lot of guidance from Operating Systems Design and Implementation
 (Minix book), OS Dev Wiki, James Molloy's tutorial at www.jamesmolloy.co.uk, and
-countless Stack posts.
+countless Stack posts. 
+
+Key concepts -- modularity,  K.I.S.S. , emphasize simplicity over optimization at this point
 
 #### Build/Install
 Build with ./build_kernel.sh
